@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory - Tumis Table</title>
+</head>
+<body>
+    <h1>Inventory</h1>
+
+    <form action="/add" method="POST">
+        <input name="name" placeholder="Name" required>
+        <input name="address" placeholder="Address" required>
+        <input name="age" placeholder="Age" required>
+        <button type="submit">Add Item</button>
+    </form>
+
+    <h2>All Entries</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th><th>Name</th><th>Address</th><th>Age</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.age }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
